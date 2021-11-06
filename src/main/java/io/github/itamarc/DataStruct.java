@@ -1,6 +1,7 @@
 package io.github.itamarc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -12,10 +13,20 @@ import java.util.TreeSet;
 public class DataStruct {
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-    int[] nums = {2, 5, 6, 11, 17, 18, 21, 24, 27, 42, 49};
+    int[] nums = {24, 2, 27, 49, 11, 6, 17, 18, 5, 21, 42};
     int[][] multiDimArr = {{2, 5, 6, 11, 17, 18}, {21, 24, 27, 42, 49}};
     // The ArrayList class is a resizable array, which can be found in the java.util package.
     ArrayList<String> arrList = new ArrayList<String>();
+
+    public void manipArrays() {
+        arrList.add("Abc");
+        arrList.add("Def");
+        arrList.add("Ghi");
+        arrList.addAll(Arrays.asList(cars));
+        arrList.set(1, "Renault");
+        System.out.println(arrList.size());
+        System.out.println(arrList.toString());
+    }
 
     // LINKED LISTS
     LinkedList<String> linkedList = new LinkedList<String>();
