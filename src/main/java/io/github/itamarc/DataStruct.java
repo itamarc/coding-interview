@@ -16,6 +16,8 @@ public class DataStruct {
     public static void main(String[] args) {
         DataStruct ds = new DataStruct();
         ds.resizeArray();
+        ds.manipArrays();
+        ds.multiDimArrManip();
     }
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
@@ -24,16 +26,16 @@ public class DataStruct {
     int[][] tuplesArr = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
     int[][] multiDimArr = {{2, 5, 6, 11, 17, 18}, {21, 24, 27, 42, 49}};
     // The ArrayList class is a resizable array, which can be found in the java.util package.
-    ArrayList<String> arrList = new ArrayList<String>();
+    List<String> arrList = new ArrayList<String>();
 
     public void resizeArray() {
         int[] arr = new int[5];
         System.arraycopy(nums, 0, arr, 0, arr.length);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Copying nums to a array of size 5:\n"+Arrays.toString(arr));
 
         int[][] mulDimArr = new int[2][2];
         System.arraycopy(tuplesArr, 0, mulDimArr, 0, mulDimArr.length);
-        System.out.println(Arrays.deepToString(mulDimArr));
+        System.out.println("Copying tuplesArr to an array of size 2:\n"+Arrays.deepToString(mulDimArr));
     }
 
     public void manipArrays() {
@@ -42,20 +44,24 @@ public class DataStruct {
         arrList.add("Ghi");
         arrList.addAll(Arrays.asList(cars));
         arrList.set(1, "Renault");
+        arrList.remove("Ghi");
+        arrList.remove(0);
+        System.out.println("Making some manipulations on arrList:");
         System.out.println(arrList.size());
         System.out.println(arrList.toString());
     }
 
     public void multiDimArrManip() {
         ArrayList<List<Integer>> arrayList = new ArrayList<List<Integer>>();
-        for (int i = 1; i <= 10; i++) {
-            for (int j = 1; j <= 10; j++) {
-                ArrayList<Integer> tuple = new ArrayList<Integer>(2);
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 5; j++) {
+                List<Integer> tuple = new ArrayList<Integer>(2);
                 tuple.add(i);
                 tuple.add(j);
                 arrayList.add(tuple);
             }
         }
+        System.out.println("Manipulating a multi dimensional array with ArrayLists:");
         System.out.println(Arrays.deepToString(arrayList.toArray()));
     }
 
