@@ -2,6 +2,7 @@ package io.github.itamarc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,14 +15,25 @@ import java.util.TreeSet;
 public class DataStruct {
     public static void main(String[] args) {
         DataStruct ds = new DataStruct();
-        ds.multiDimArrManip();
+        ds.resizeArray();
     }
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     int[] nums = {24, 2, 27, 49, 11, 6, 17, 18, 5, 21, 42};
+    int[][] tuplesArr = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
     int[][] multiDimArr = {{2, 5, 6, 11, 17, 18}, {21, 24, 27, 42, 49}};
     // The ArrayList class is a resizable array, which can be found in the java.util package.
     ArrayList<String> arrList = new ArrayList<String>();
+
+    public void resizeArray() {
+        int[] arr = new int[5];
+        System.arraycopy(nums, 0, arr, 0, arr.length);
+        System.out.println(Arrays.toString(arr));
+
+        int[][] mulDimArr = new int[2][2];
+        System.arraycopy(tuplesArr, 0, mulDimArr, 0, mulDimArr.length);
+        System.out.println(Arrays.deepToString(mulDimArr));
+    }
 
     public void manipArrays() {
         arrList.add("Abc");
@@ -66,6 +78,7 @@ public class DataStruct {
     SortedSet<String> sortedSet = new TreeSet<String>();
 
     // MAPS
+    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
     // BINARY TREES
 

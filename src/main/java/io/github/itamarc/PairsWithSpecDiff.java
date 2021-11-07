@@ -1,6 +1,5 @@
 package io.github.itamarc;
 
-import java.io.*;
 import java.util.*;
 
 public class PairsWithSpecDiff {
