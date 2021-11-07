@@ -134,10 +134,33 @@ public class Sort {
             }
 
             // Swap the elements at the left and right indices
-            int tmp = inArr[lIdx];
-            inArr[lIdx] = inArr[rIdx];
-            inArr[rIdx] = tmp;
+            swap(inArr, lIdx, rIdx);
         }
+    }
+
+    public static void insertionSort(int[] inArr) {
+        int i = 1;
+        while (i < inArr.length) {
+            int j = i;
+            while (j > 0 && inArr[j-1] > inArr[j]) {
+                swap(inArr, j, j-1);
+                j--;
+            }
+            i++;
+        }
+    }
+
+    /**
+     * Swap two elements of an array.
+     * 
+     * @param array The array containing the elements
+     * @param first First element index
+     * @param second Second element index
+     */
+    public static void swap(int[] array, int first, int second) {
+        int tmp = array[first];
+        array[first] = array[second];
+        array[second] = tmp;
     }
 
     // public float[] someSortAlgorithm(float[] in) {

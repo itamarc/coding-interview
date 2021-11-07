@@ -20,6 +20,7 @@ public class DataStruct {
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     int[] nums = {24, 2, 27, 49, 11, 6, 17, 18, 5, 21, 42};
+    int[] sortedNums = {2, 5, 6, 11, 17, 18, 21, 24, 27, 42, 49};
     int[][] tuplesArr = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
     int[][] multiDimArr = {{2, 5, 6, 11, 17, 18}, {21, 24, 27, 42, 49}};
     // The ArrayList class is a resizable array, which can be found in the java.util package.
