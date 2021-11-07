@@ -35,7 +35,16 @@ public class AppTest {
     public void insertionSort() {
         DataStruct ds = new DataStruct();
         // System.err.println(Arrays.toString(ds.nums));
-        Sort.insertionSort(ds.nums);        
+        Sort.insertionSort(ds.nums);
+        // System.err.println(Arrays.toString(ds.nums));
+        assertTrue(Arrays.equals(ds.sortedNums, ds.nums));
+    }
+
+    @Test
+    public void insertionSortRecursive() {
+        DataStruct ds = new DataStruct();
+        // System.err.println(Arrays.toString(ds.nums));
+        Sort.insertionSortRecursive(ds.nums, ds.nums.length-1);
         // System.err.println(Arrays.toString(ds.nums));
         assertTrue(Arrays.equals(ds.sortedNums, ds.nums));
     }
