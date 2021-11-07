@@ -82,7 +82,7 @@ public class Sort {
      *   the boundary where all elements are known to be equal to the pivot, these can be excluded as well.)
      * 
      * This method implements the Hoare partition scheme.
-     * Ref: https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme
+     * Ref: https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme
      * 
      * @param inArr The array to be sorted.
      */
@@ -100,11 +100,12 @@ public class Sort {
     private static void quickSort(int[] inArr, int lo, int hi) {
         if (lo >= 0 && hi >=0 && lo < hi) {
             int pivot = qSPartition(inArr, lo, hi);
-            quickSort(inArr, lo, pivot);
+            quickSort(inArr, lo, pivot); // In this implementation, the pivot is included
             quickSort(inArr, pivot+1, hi);
         }
     }
 
+    // In the partition is the main difference in Hoare implementation
     private static int qSPartition(int[] inArr, int lo, int hi) {
         // Value in the middle of the array
         int pivot = inArr[(lo + hi) / 2];
