@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class PairsWithSpecDiff {
-    static Integer[][] findPairsWithGivenDifference(int[] arr, int k) {
+    static int[][] findPairsWithGivenDifference(int[] arr, int k) {
         ArrayList<Integer[]> retArr = new ArrayList<Integer[]>();
         HashMap<Integer, Integer> diffMap = new HashMap<Integer, Integer>();
         // for each element in the array
@@ -23,13 +23,17 @@ public class PairsWithSpecDiff {
         }
         // input: arr = [0, -1, -2, 2, 1], k = 1
         // output: [[1, 0], [0, -1], [-1, -2], [2, 1]]
-               
-        return retArr.toArray(new Integer[retArr.size()][]);
+        int [][] ret = new int[retArr.size()][2];
+        for (int i = 0; i < retArr.size(); i++) {
+            ret[i][0] = retArr.get(i)[0];
+            ret[i][1] = retArr.get(i)[1];
+        }
+        return ret;
     }
 
     public static void main(String[] args) {
         int[] arr = { 0, -1, -2, 2, 1 };
-        Integer[][] ret = findPairsWithGivenDifference(arr, 1);
+        int[][] ret = findPairsWithGivenDifference(arr, 1);
         // int[] arr = { 1, 7, 5, 3, 32, 17, 12 };
         // Integer[][] ret = findPairsWithGivenDifference(arr, 17);
         System.out.println(Arrays.deepToString(ret));
