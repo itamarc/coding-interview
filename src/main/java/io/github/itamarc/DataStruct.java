@@ -19,6 +19,7 @@ public class DataStruct {
         ds.manipArrays();
         ds.multiDimArrManip();
         ds.manipSets();
+        ds.manipLinkedList();
     }
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
@@ -68,6 +69,31 @@ public class DataStruct {
 
     // LINKED LISTS
     LinkedList<String> linkedList = new LinkedList<String>();
+
+    public void manipLinkedList() {
+        System.out.println("Manipulating a Linked List:");
+
+        // Add
+        linkedList.add("Santorini");
+        linkedList.addFirst("Barcelona");
+        linkedList.addLast("Tokyo");
+        linkedList.add(2, "Galapagos Islands");
+        System.out.println(linkedList);
+
+        // Access
+        System.out.println(linkedList.get(2));
+        System.out.println(linkedList.getFirst());
+        System.out.println(linkedList.contains("Barcelona"));
+
+        // Remove items
+        linkedList.removeFirst();
+        linkedList.removeLast();
+        System.out.println(linkedList);
+        
+        linkedList.remove("Santorini");
+        linkedList.remove(0);
+        System.out.println(linkedList);
+    }
 
     // QUEUES
     Queue<String> queueLnkdLst = new LinkedList<String>();
