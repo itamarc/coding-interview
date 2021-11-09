@@ -10,7 +10,7 @@ public class Intersection {
     
         ArrayList<Integer[]>  array1Compl = calculateComplementaryArray(array1);
         
-        ArrayList<Integer[]> array2Compl = calculateComplementaryArray(array1);
+        ArrayList<Integer[]> array2Compl = calculateComplementaryArray(array2);
 
         ArrayList<Integer[]> intersection = findInterceptionBetweenArrays(array1Compl, array2Compl);
         System.out.println("Intersection of complementary arrays:");
