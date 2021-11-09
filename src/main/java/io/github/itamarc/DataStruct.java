@@ -18,6 +18,7 @@ public class DataStruct {
         ds.resizeArray();
         ds.manipArrays();
         ds.multiDimArrManip();
+        ds.manipSets();
     }
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
@@ -83,6 +84,17 @@ public class DataStruct {
      */
     Set<String> set = new HashSet<String>();
     SortedSet<String> sortedSet = new TreeSet<String>();
+
+    public void manipSets() {
+        System.out.println("Manipulating SETS:");
+        set.add("Aaa");
+        set.add("Bbb");
+        set.add("Ccc");
+        System.out.println((set.contains("Bbb") ? "Set contains 'Bbb'" : "Set doesn't contain 'Bbb'"));
+        set.remove("Bbb");
+        System.out.println((set.contains("Bbb") ? "Set contains 'Bbb'" : "Set doesn't contain 'Bbb'"));
+        System.out.println(set.toString());
+    }
 
     // MAPS
     HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
