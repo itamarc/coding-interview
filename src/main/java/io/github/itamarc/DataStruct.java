@@ -10,6 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.Stack;
 import java.util.TreeSet;
 
 public class DataStruct {
@@ -20,7 +21,10 @@ public class DataStruct {
         ds.multiDimArrManip();
         ds.manipSets();
         ds.manipLinkedList();
+        ds.reverseLinkedList();
+        ds.manipQueue();
     }
+
     // ARRAYS
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     int[] nums = {24, 2, 27, 49, 11, 6, 17, 18, 5, 21, 42};
@@ -95,6 +99,25 @@ public class DataStruct {
         System.out.println(linkedList);
     }
 
+    private void reverseLinkedList() {
+        System.out.println("Reversing a linked list:");
+        // Add
+        linkedList.add("Santorini");
+        linkedList.addFirst("Barcelona");
+        linkedList.addLast("Tokyo");
+        linkedList.add(2, "Galapagos Islands");
+        System.out.println(linkedList);
+        
+        Stack<String> astack = new Stack<String>();
+        while (!linkedList.isEmpty()) {
+            astack.push(linkedList.removeFirst());
+        }
+        while (!astack.isEmpty()) {
+            linkedList.add(astack.pop());
+        }
+        System.out.println(linkedList);
+    }
+
     // QUEUES
     Queue<String> queueLnkdLst = new LinkedList<String>();
     /* An unbounded priority queue based on a priority heap.
@@ -102,6 +125,18 @@ public class DataStruct {
      * or by a Comparator provided at queue construction time, depending on which constructor is used.
      * A priority queue does not permit null elements.
      */
+    public void manipQueue() {
+        System.out.println("Manipulating Queue:");
+        queueLnkdLst.add("10");
+        queueLnkdLst.add("5");
+        queueLnkdLst.add("8");
+        System.out.println(queueLnkdLst);
+        queueLnkdLst.poll();
+        System.out.println(queueLnkdLst);
+        queueLnkdLst.poll();
+        System.out.println(queueLnkdLst);
+        System.out.println(queueLnkdLst.peek());
+    }
     Queue<String> priorityQueue = new PriorityQueue<String>();
 
     // SETS
