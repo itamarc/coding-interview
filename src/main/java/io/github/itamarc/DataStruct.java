@@ -151,10 +151,13 @@ public class DataStruct {
         set.add("Aaa");
         set.add("Bbb");
         set.add("Ccc");
+        System.out.println(set);
+        set.add("Ccc");
+        System.out.println(set);
         System.out.println((set.contains("Bbb") ? "Set contains 'Bbb'" : "Set doesn't contain 'Bbb'"));
         set.remove("Bbb");
+        System.out.println(set);
         System.out.println((set.contains("Bbb") ? "Set contains 'Bbb'" : "Set doesn't contain 'Bbb'"));
-        System.out.println(set.toString());
     }
 
     // MAPS
