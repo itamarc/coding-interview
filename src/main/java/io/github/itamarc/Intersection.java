@@ -8,7 +8,7 @@ public class Intersection {
         int[][] array1 = {{0, 8}, {10, 12}, {14, 15}, {15, 16}, {17, 18}, {18, 24}};
         int[][] array2 = {{0, 10}, {10, 11}, {12, 13}, {15, 16}, {20, 24}};
     
-        ArrayList<Integer[]>  array1Compl = calculateComplementaryArray(array1);
+        ArrayList<Integer[]> array1Compl = calculateComplementaryArray(array1);
         
         ArrayList<Integer[]> array2Compl = calculateComplementaryArray(array2);
 
@@ -54,16 +54,16 @@ public class Intersection {
             Integer[] block1 = array1.get(i1);
             Integer[] block2 = array2.get(i2);
             // blocks overlap
-            if ((block1[0] > block2[0] && block1[0] < block2[1]) ||
-                (block2[0] > block1[0] && block2[0] < block1[1])) {
+            if ((block1[0] >= block2[0] && block1[0] < block2[1]) ||
+                (block2[0] >= block1[0] && block2[0] < block1[1])) {
                 Integer[] intersectBlock = new Integer[2];
-                intersectBlock[0] = (block1[0] > block2[0] ? block1[0] : block2[0]);
-                intersectBlock[1] = (block1[1] < block2[1] ? block1[1] : block2[1]);
+                intersectBlock[0] = (block1[0] >= block2[0] ? block1[0] : block2[0]);
+                intersectBlock[1] = (block1[1] <= block2[1] ? block1[1] : block2[1]);
                 intersection.add(intersectBlock);
                 i1++;
                 i2++;
             } else {
-                if (block1[0] > block2[0]) {
+                if (block1[0] < block2[0]) {
                     i1++;
                 } else {
                     i2++;
