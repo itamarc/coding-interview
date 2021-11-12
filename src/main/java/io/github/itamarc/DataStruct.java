@@ -16,6 +16,7 @@ import java.util.TreeSet;
 public class DataStruct {
     public static void main(String[] args) {
         DataStruct ds = new DataStruct();
+        ds.minAcumSum();
         ds.resizeArray();
         ds.manipArrays();
         ds.multiDimArrManip();
@@ -33,6 +34,32 @@ public class DataStruct {
     int[][] multiDimArr = {{2, 5, 6, 11, 17, 18}, {21, 24, 27, 42, 49}};
     // The ArrayList class is a resizable array, which can be found in the java.util package.
     List<String> arrList = new ArrayList<String>();
+
+    public void minAcumSum() {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += sum + nums[i];
+        }
+        System.out.println("The sum in 'nums' is: "+sum);
+
+        sum = 0;
+        for (int i = 0; i < sortedNums.length; i++) {
+            sum += sum + sortedNums[i];
+        }
+        System.out.println("The sum in 'sortedNums' is: "+sum);
+
+        int[] queries = {3, 2, 1, 2, 6}; // 1, 2, 2, 3, 6
+        Arrays.sort(queries);
+        sum = 0;
+        for (int i = 0; i < queries.length; i++) {
+            int wait = 0;
+            for (int j = 0; j < i; j++) {
+                wait += queries[j];
+            }
+            sum += wait;
+        }
+        System.out.println("The sum in 'queries' is: "+sum);
+    }
 
     public void resizeArray() {
         int[] arr = new int[5];
