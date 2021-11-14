@@ -2,6 +2,7 @@ package io.github.itamarc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -19,11 +20,32 @@ public class DataStruct {
         ds.minAcumSum();
         ds.resizeArray();
         ds.manipArrays();
+        ds.maxAndMinCombination();
         ds.multiDimArrManip();
         ds.manipSets();
         ds.manipLinkedList();
         ds.reverseLinkedList();
         ds.manipQueue();
+    }
+
+    private void maxAndMinCombination() {
+        int[] arr1 = {5, 5, 3, 9, 2};
+        int[] arr2 = {3, 6, 7, 2, 1};
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        int max = 0;
+        int min = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            max += max(arr1[i], arr2[arr2.length-1-i]);
+            min += max(arr1[i], arr2[i]);
+        }
+        System.out.println("Defining max and min combinations.");
+        System.out.println("max="+max);
+        System.out.println("min="+min);
+    }
+
+    private int max(int i, int j) {
+        return (i > j ? i : j);
     }
 
     // ARRAYS
@@ -78,10 +100,18 @@ public class DataStruct {
         arrList.addAll(Arrays.asList(cars));
         arrList.set(1, "Renault");
         arrList.remove("Ghi");
-        arrList.remove(0);
+        arrList.remove(0);        
         System.out.println("Making some manipulations on arrList:");
         System.out.println(arrList.size());
         System.out.println(arrList.toString());
+        ArrayList<Integer> arrListInt = new ArrayList<Integer>();
+        arrListInt.add(3);
+        arrListInt.add(2);
+        arrListInt.add(5);
+        arrListInt.add(1);
+        arrListInt.add(4);
+        arrListInt.sort(Comparator.naturalOrder());
+        System.out.println("Sorting arrListInt: "+arrListInt.toString());
     }
 
     public void multiDimArrManip() {
