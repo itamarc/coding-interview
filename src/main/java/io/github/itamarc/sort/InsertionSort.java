@@ -1,6 +1,6 @@
 package io.github.itamarc.sort;
 
-public class InsertionSort {
+public class InsertionSort extends SortAlgorithm {
     /**
      * INSERTION SORT
      * 
@@ -31,19 +31,6 @@ public class InsertionSort {
             }
             i++;
         }
-    }
-
-    /**
-     * Swap two elements of an array.
-     * 
-     * @param array The array containing the elements
-     * @param first First element index
-     * @param second Second element index
-     */
-    private static void swap(int[] array, int first, int second) {
-        int tmp = array[first];
-        array[first] = array[second];
-        array[second] = tmp;
     }
 
     /**

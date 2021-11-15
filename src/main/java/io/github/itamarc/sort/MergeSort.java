@@ -2,7 +2,7 @@ package io.github.itamarc.sort;
 
 import java.util.Arrays;
 
-public class MergeSort {
+public class MergeSort extends SortAlgorithm {
     /**
      * MERGE SORT
      * 

@@ -1,6 +1,6 @@
 package io.github.itamarc.sort;
 
-public class QuickSort {
+public class QuickSort extends SortAlgorithm {
     /**
      * QUICK SORT
      * 
@@ -81,18 +81,5 @@ public class QuickSort {
             // Swap the elements at the left and right indices
             swap(inArr, lIdx, rIdx);
         }
-    }
-
-    /**
-     * Swap two elements of an array.
-     * 
-     * @param array The array containing the elements
-     * @param first First element index
-     * @param second Second element index
-     */
-    private static void swap(int[] array, int first, int second) {
-        int tmp = array[first];
-        array[first] = array[second];
-        array[second] = tmp;
     }
 }

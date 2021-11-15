@@ -5,7 +5,7 @@ package io.github.itamarc.sort;
  * 
  * Ref.: https://www.geeksforgeeks.org/heap-sort/
  */
-public class HeapSort {
+public class HeapSort extends SortAlgorithm {
     public static void sort(int arr[]) {
         int n = arr.length;
 
@@ -16,9 +16,7 @@ public class HeapSort {
         // One by one extract an element from heap
         for (int i = n - 1; i > 0; i--) {
             // Move current root to end
-            int temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
+            swap(arr, 0, i);
 
             // call max heapify on the reduced heap
             heapify(arr, i, 0);
@@ -42,9 +40,7 @@ public class HeapSort {
 
         // If largest is not root
         if (largest != i) {
-            int swap = arr[i];
-            arr[i] = arr[largest];
-            arr[largest] = swap;
+            swap(arr, i, largest);
 
             // Recursively heapify the affected sub-tree
             heapify(arr, n, largest);
