@@ -158,14 +158,29 @@ public class Sort {
      */
     public static void insertionSort(int[] inArr) {
         int i = 1;
+        // for each element in the inArr
         while (i < inArr.length) {
-            int j = i;
+            int j = i; // loook at the values of the array previous to the current one
+            // if the previous elem is bigger than the current one, swap them and start again from there
             while (j > 0 && inArr[j-1] > inArr[j]) {
                 swap(inArr, j, j-1);
                 j--;
             }
             i++;
         }
+    }
+
+    /**
+     * Swap two elements of an array.
+     * 
+     * @param array The array containing the elements
+     * @param first First element index
+     * @param second Second element index
+     */
+    public static void swap(int[] array, int first, int second) {
+        int tmp = array[first];
+        array[first] = array[second];
+        array[second] = tmp;
     }
 
     /**
@@ -185,19 +200,6 @@ public class Sort {
             }
             inArr[j+1] = x;
         }
-    }
-
-    /**
-     * Swap two elements of an array.
-     * 
-     * @param array The array containing the elements
-     * @param first First element index
-     * @param second Second element index
-     */
-    public static void swap(int[] array, int first, int second) {
-        int tmp = array[first];
-        array[first] = array[second];
-        array[second] = tmp;
     }
 
     // public float[] someSortAlgorithm(float[] in) {
