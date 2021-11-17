@@ -15,6 +15,9 @@ public class Numbers {
         int b = 9;
         int c = (a + b) / 2;
         System.out.println("("+a+" + "+b+") / 2 = "+c);
+        // mod
+        int d = b % 5;
+        System.out.println("mod("+b+", 5)="+d);
     }
 
     public static void manipListOfLong() {
