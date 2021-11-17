@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
@@ -26,6 +27,7 @@ public class DataStruct {
         ds.manipLinkedList();
         ds.reverseLinkedList();
         ds.manipQueue();
+        ds.manipMaps();
     }
 
     private void maxAndMinCombination() {
@@ -218,12 +220,36 @@ public class DataStruct {
     }
 
     // MAPS
-    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+    public void manipMaps() {
+        map.put(10, 20);
+        map.put(11, 21);
+        map.put(12, 22);
+        map.put(13, 23);
+        map.put(14, 24);
+        map.remove(14);
+        System.out.println("Map: "+map.toString());
+        System.out.println("Map contains key 12? "+map.containsKey(12));
+        System.out.println("Map contains key 22? "+map.containsKey(22));
+        System.out.println("Map contains value 22? "+map.containsValue(22));
+        System.out.println("Map contains value 12? "+map.containsValue(12));
+
+        System.out.print("Keys: [");
+        boolean first = true;
+        for (int key : map.keySet()) {
+            System.out.print((first ? "" : ", ")+key);
+            first = false;
+        }
+        System.out.println("]");
+    }
 
     // BINARY TREES
 
     // HEAPS
 
     // GRAPHS
+			
+
     
 }
