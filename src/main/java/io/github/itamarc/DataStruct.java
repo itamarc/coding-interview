@@ -27,6 +27,7 @@ public class DataStruct {
         ds.manipLinkedList();
         ds.reverseLinkedList();
         ds.manipQueue();
+        ds.manipStacks();
         ds.manipMaps();
     }
 
@@ -112,8 +113,13 @@ public class DataStruct {
         arrListInt.add(5);
         arrListInt.add(1);
         arrListInt.add(4);
+        System.out.println("Original arrListInt: "+arrListInt.toString());
+        arrListInt.add(3, 7);
+        System.out.println("arrListInt after inserting 7 on index 3: "+arrListInt.toString());
+        arrListInt.remove(3);
+        System.out.println("arrListInt after removing elem on index 3: "+arrListInt.toString());
         arrListInt.sort(Comparator.naturalOrder());
-        System.out.println("Sorting arrListInt: "+arrListInt.toString());
+        System.out.println("Sorted arrListInt: "+arrListInt.toString());
     }
 
     public void multiDimArrManip() {
@@ -197,6 +203,18 @@ public class DataStruct {
         System.out.println(queueLnkdLst.peek());
     }
     Queue<String> priorityQueue = new PriorityQueue<String>();
+
+    // STACKS
+    Stack<Integer> iStack = new Stack<Integer>();
+
+    public void manipStacks() {
+        iStack.push(1);
+        iStack.push(2);
+        iStack.push(5);
+        System.out.println("Stack peek: "+iStack.peek());
+        iStack.pop();
+        System.out.println("Stack peek: "+iStack.peek());
+    }
 
     // SETS
     /* The set interface is present in java.util package and extends the Collection interface
