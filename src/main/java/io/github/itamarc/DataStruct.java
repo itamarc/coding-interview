@@ -21,6 +21,7 @@ public class DataStruct {
         ds.minAcumSum();
         ds.resizeArray();
         ds.manipArrays();
+        ds.manipIntArray();
         ds.maxAndMinCombination();
         ds.multiDimArrManip();
         ds.manipSets();
@@ -120,6 +121,15 @@ public class DataStruct {
         System.out.println("arrListInt after removing elem on index 3: "+arrListInt.toString());
         arrListInt.sort(Comparator.naturalOrder());
         System.out.println("Sorted arrListInt: "+arrListInt.toString());
+    }
+
+    public void manipIntArray() {
+        int[] arr = null;
+        System.out.println("Int array non existent: "+Arrays.toString(arr));
+        arr = new int[5];
+        System.out.println("Int array non initialized: "+Arrays.toString(arr));
+        Arrays.fill(arr, -1);
+        System.out.println("Int array filled: "+Arrays.toString(arr));
     }
 
     public void multiDimArrManip() {
