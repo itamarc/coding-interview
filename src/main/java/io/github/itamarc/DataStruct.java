@@ -195,11 +195,6 @@ public class DataStruct {
 
     // QUEUES
     Queue<String> queueLnkdLst = new LinkedList<String>();
-    /* An unbounded priority queue based on a priority heap.
-     * The elements of the priority queue are ordered according to their natural ordering,
-     * or by a Comparator provided at queue construction time, depending on which constructor is used.
-     * A priority queue does not permit null elements.
-     */
     public void manipQueue() {
         System.out.println("Manipulating Queue:");
         queueLnkdLst.add("10");
@@ -212,6 +207,11 @@ public class DataStruct {
         System.out.println(queueLnkdLst);
         System.out.println(queueLnkdLst.peek());
     }
+    /* An unbounded priority queue based on a priority heap.
+     * The elements of the priority queue are ordered according to their natural ordering,
+     * or by a Comparator provided at queue construction time, depending on which constructor is used.
+     * A priority queue does not permit null elements.
+     */
     Queue<String> priorityQueue = new PriorityQueue<String>();
 
     // STACKS
