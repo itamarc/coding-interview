@@ -102,12 +102,13 @@ public class DataStruct {
         arrList.add("Def");
         arrList.add("Ghi");
         arrList.addAll(Arrays.asList(cars));
-        arrList.set(1, "Renault");
-        arrList.remove("Ghi");
-        arrList.remove(0);        
+        arrList.set(1, "Renault"); // Def -> Renault
+        arrList.remove("Ghi");     // Remove Object
+        arrList.remove(0);         // Remove index
         System.out.println("Making some manipulations on arrList:");
         System.out.println(arrList.size());
         System.out.println(arrList.toString());
+
         ArrayList<Integer> arrListInt = new ArrayList<Integer>();
         arrListInt.add(3);
         arrListInt.add(2);
@@ -221,9 +222,15 @@ public class DataStruct {
         iStack.push(1);
         iStack.push(2);
         iStack.push(5);
+
         System.out.println("Stack peek: "+iStack.peek());
-        iStack.pop();
+
+        System.out.println("Stack pop: "+iStack.pop());
+        
         System.out.println("Stack peek: "+iStack.peek());
+        
+        System.out.println("Search 2: "+iStack.search(2));
+        System.out.println("Search 5: "+iStack.search(5));
     }
 
     // SETS

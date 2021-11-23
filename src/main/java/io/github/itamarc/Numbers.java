@@ -18,6 +18,10 @@ public class Numbers {
         // mod
         int d = b % 5;
         System.out.println("mod("+b+", 5)="+d);
+
+        int div = (int)Math.floor((b-1)/2);
+        System.out.println("(int)Math.floor(("+b+"-1)/2)="+div);
+        System.out.println("Math.floor(("+b+"-1)/2)="+Math.floor((b-1)/2));
     }
 
     public static void manipListOfLong() {
