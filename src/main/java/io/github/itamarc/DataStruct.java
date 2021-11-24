@@ -88,10 +88,11 @@ public class DataStruct {
     }
 
     public void resizeArray() {
+        System.out.println("Original array:\n"+Arrays.toString(nums));
         int[] arr = new int[5];
         System.arraycopy(nums, 0, arr, 0, arr.length);
         System.out.println("Copying nums to a array of size 5:\n"+Arrays.toString(arr));
-
+        
         int[][] mulDimArr = new int[2][2];
         System.arraycopy(tuplesArr, 0, mulDimArr, 0, mulDimArr.length);
         System.out.println("Copying tuplesArr to an array of size 2:\n"+Arrays.deepToString(mulDimArr));
