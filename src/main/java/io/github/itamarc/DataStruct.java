@@ -122,6 +122,12 @@ public class DataStruct {
         System.out.println("arrListInt after removing elem on index 3: "+arrListInt.toString());
         arrListInt.sort(Comparator.naturalOrder());
         System.out.println("Sorted arrListInt: "+arrListInt.toString());
+
+        ArrayList<Integer> arrListInt2 = new ArrayList<Integer>(arrListInt);
+        arrListInt2.set(0, 100);
+        System.out.println("arrListInt="+arrListInt.toString());
+        System.out.println("arrListInt2="+arrListInt2.toString());
+
     }
 
     public void manipIntArray() {
