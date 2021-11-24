@@ -13,29 +13,29 @@ public class Search {
 
     /**
      * Search a sorted array by repeatedly dividing the search interval in half.
-     * @param arr The sorted array to be searched.
-     * @param lInd Left index for the search.
-     * @param rInd Right index for the search.
-     * @param n The number to be searched.
+     * @param array The sorted array to be searched.
+     * @param leftIndex Left index for the search.
+     * @param rightIndex Right index for the search.
+     * @param target The number to be searched.
      * @return The index of the element or -1 if not present.
      */
-    public static int binarySearch(int arr[], int lInd, int rInd, int n) {
-        int ret = -1;
-        if (rInd >= lInd) {
-            int mid = lInd + (rInd - lInd) /2;
+    public static int binarySearch(int array[], int leftIndex, int rightIndex, int target) {
+        int result = -1;
+        if (rightIndex >= leftIndex) {
+            int mid = leftIndex + (rightIndex - leftIndex) /2;
 
             // If the element is in the middle: found!
-            if (arr[mid] == n) {
-                ret = mid;
+            if (array[mid] == target) {
+                result = mid;
             } else {
                 // If the element is below the middle, serch in the left portion
-                if (n < arr[mid]) {
-                    ret = binarySearch(arr, lInd, mid-1, n);
+                if (target < array[mid]) {
+                    result = binarySearch(array, leftIndex, mid-1, target);
                 } else { // Else, look in the right subarray
-                    ret = binarySearch(arr, mid+1, rInd, n);
+                    result = binarySearch(array, mid+1, rightIndex, target);
                 }
             }
         }
-        return ret;
+        return result;
     }
 }

@@ -7,16 +7,15 @@ package io.github.itamarc.sort;
  */
 public class BubbleSort extends SortAlgorithm {
     public static void sort(int[] array) {
-        boolean sorted = false;
-        while (!sorted) {
-            boolean chkSorted = true;
+        boolean unsorted = true;
+        while (unsorted) {
+            unsorted = false;
             for (int i = 0; i < array.length-1; i++) {
                 if (array[i] > array[i+1]) {
                     swap(array, i, i+1);
-                    chkSorted = false;
+                    unsorted = true;
                 }
             }
-            sorted = chkSorted;
         }
     }
 }

@@ -12,15 +12,15 @@ Preparation for coding interviews.
 ## Important topics:
 
 - [x] Logarithm
-- [ ] Graph traversal (depth-first search, breadth-first search), cyclic graphs
+- [x] Graph traversal (depth-first search, breadth-first search), cyclic graphs
 - [x] Binary search
-- [ ] Sliding window technique
-- [x] Recursion
-- [ ] Invert a binary tree
-- [ ] Reverse a linked list
-- [ ] Suffix tree
-- [ ] Heaps
-- [ ] Dynamic programming
 - [x] Sorting algorithms (quick sort, merge sort, insertion sort, etc.)
+- [x] Recursion
+- [x] Invert a binary tree
+- [x] Reverse a linked list
+- [x] Sliding window technique
+- [+] Heaps
+- [ ] Suffix tree
+- [ ] ~~Dynamic programming~~
 
 (Source: [video](https://www.youtube.com/watch?v=Ge0Udbws1kc))

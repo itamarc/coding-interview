@@ -17,38 +17,38 @@ public class InsertionSort extends SortAlgorithm {
      * 
      * Ref: https://en.wikipedia.org/wiki/Insertion_sort
      * 
-     * @param inArr
+     * @param array
      */
-    public static void sort(int[] inArr) {
-        int i = 1;
-        // for each element in the inArr
-        while (i < inArr.length) {
-            int j = i; // loook at the values of the array previous to the current one
+    public static void sort(int[] array) {
+        int ind = 1;
+        // for each element in the array
+        while (ind < array.length) {
+            int curr = ind; // loook at the values of the array previous to the current one
             // if the previous elem is bigger than the current one, swap them and start again from there
-            while (j > 0 && inArr[j-1] > inArr[j]) {
-                swap(inArr, j, j-1);
-                j--;
+            while (curr > 0 && array[curr-1] > array[curr]) {
+                swap(array, curr, curr-1);
+                curr--;
             }
-            i++;
+            ind++;
         }
     }
 
     /**
      * Recursive version of insertion sort.
      * 
-     * @param inArr The array to be sorted
-     * @param n Initially the index of the last element of the array (inArr.length-1)
+     * @param array The array to be sorted
+     * @param rightIndex Initially the index of the last element of the array (inArr.length-1)
      */
-    public static void sortRecursive(int[] inArr, int n) {
-        if (n > 0) {
-            sortRecursive(inArr, n-1);
-            int x = inArr[n];
-            int j = n-1;
-            while (j >= 0 && inArr[j] > x) {
-                inArr[j+1] = inArr[j];
+    public static void sortRecursive(int[] array, int rightIndex) {
+        if (rightIndex > 0) {
+            sortRecursive(array, rightIndex-1);
+            int x = array[rightIndex];
+            int j = rightIndex-1;
+            while (j >= 0 && array[j] > x) {
+                array[j+1] = array[j];
                 j--;
             }
-            inArr[j+1] = x;
+            array[j+1] = x;
         }
     }
 }
