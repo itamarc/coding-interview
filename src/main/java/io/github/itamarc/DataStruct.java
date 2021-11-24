@@ -152,6 +152,8 @@ public class DataStruct {
         }
         System.out.println("Manipulating a multi dimensional array with ArrayLists:");
         System.out.println(Arrays.deepToString(arrayList.toArray()));
+
+        System.out.println("Multidimensional array:\n"+Arrays.deepToString(tuplesArr));
     }
 
     // LINKED LISTS

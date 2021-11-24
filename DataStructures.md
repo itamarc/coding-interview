@@ -13,7 +13,10 @@ arr1.length; // 5
 Arrays.sort(arr1);
 System.out.println("Sorted int array: "+Arrays.toString(arr1));
 
-int[] arr2 = new int[3];
+int[][] tuplesArr = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
+System.out.println("Multidimensional array: "+Arrays.deepToString(tuplesArr));
+
+int[] arr2 = new int[3]; // Initially this will be {0, 0, 0}
 System.arraycopy(arr1, 0, arr2, 0, arr2.length);
 // Same as:
 arr2 = Arrays.copyOf(arr1, arr2.length);
@@ -36,7 +39,7 @@ arrList.addAll(Arrays.asList(cars));
 
 arrList.set(1, "Renault"); // Def -> Renault
 arrList.remove("Ghi");     // Remove Object
-arrList.remove(0);         // Remove index
+arrList.remove(0);         // Remove "Abc" by index
 
 arrList.size(); // 5
 
@@ -47,34 +50,57 @@ arrListInt.sort(Comparator.naturalOrder());
 
 ## Linked lists
 ```java
-import java.util.LinkedList;
+import java.util.LinkedList;    // Class, double-linked list
 ```
 
 ## Queues
+
+FIFO Structure
+
+> :arrow_forward: ```| A, B, C, D, E |``` :arrow_forward:
+
+- Used to traverse a tree or graph in a breadth-first manner.
+
 ```java
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.Queue;         // Interface
+import java.util.PriorityQueue; // Class
 ```
+
+## Stacks
+
+LIFO Structure
+
+> ```[A, B, C, D, E |``` :arrow_backward: :arrow_forward:
+
+- Used to reverse a linked list.
+
+```java
+import java.util.Stack;     // Class
+```
+
 
 ## Sets
 ```java
-import java.util.HashSet;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.Set;       // Interface
+import java.util.SortedSet; // Interface
+import java.util.HashSet;   // Class
+import java.util.TreeSet;   // Class
 ```
 
 ## Maps
 ```java
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Map;       // Interface
+import java.util.HashMap;   // Class
 ```
 
 ## Binary Trees
 
+### Binary Search Trees
+
 ## Heaps
 
+### Min Heaps
+
+### Max Heaps
+
 ## Graphs
-```java
-import java.util.Stack;
-```

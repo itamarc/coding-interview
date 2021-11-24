@@ -7,6 +7,7 @@ public class MyLinkedList {
     public static void main(String[] args) {
         MyLinkedList ll = new MyLinkedList();
         ll.add(10);
+        ll.add(15);
         ll.add(18);
         ll.add(21);
 
