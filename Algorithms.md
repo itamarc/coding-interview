@@ -141,7 +141,7 @@ public static int binarySearch(int array[], int leftIndex, int rightIndex, int t
         if (array[mid] == target) {
             result = mid;
         } else {
-            // If the element is below the middle value, serch in the left portion
+            // If the element is below the middle value, search in the left portion
             if (target < array[mid]) {
                 result = binarySearch(array, leftIndex, mid-1, target);
             } else { // Else, look in the right subarray
@@ -345,6 +345,29 @@ public static void reverse(LinkedList<T> linkedList) {
 
 ## Heaps
 
-:warning:
+Heap is a data structure that satisfies the heap property:
+- The heap is a complete binary tree.
+- The parent node is always greater than or equal to its children (Max Heap) or smaller than or equal (Min Heap).
+- The root node is always the greatest element in the heap (Max Heap) or the smallest (Min Heap).
+
+When the Heap is stored in an array, you can access the parent node by using the formula:
+- parent = ```floor( (i - 1) / 2 )```
+
+And the children by using the formulas:
+- left = ```2 * i + 1```
+- right = ```2 * i + 2```
+
+To insert a node:
+- Add the node to the end of the list.
+- Compare the node with its parent.
+- If the parent is smaller, swap the nodes.
+- Continue until the node is in the correct position.
+
+To remove the root node:
+- Swap the root node with the last node.
+- Remove the last node.
+- Compare the root node with its smaller child.
+- If the child is smaller, swap the nodes.
+- Continue until the node is in the correct position.
 
 ## Dynamic programming and memorization
