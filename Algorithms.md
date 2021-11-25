@@ -71,18 +71,50 @@ public static void insertionSortRecursive(int[] array, int rightIndex) {
 
 ### Quick sort
 
-:warning:
+Quicksort is a type of **divide and conquer** algorithm for sorting an array, based on a
+partitioning routine; the details of this partitioning can vary somewhat, so that 
+quicksort is really a family of closely related algorithms.
+
+#### The steps for in-place quicksort are:
+
+1. If the range has **less than two elements, return** immediately as there is nothing to do. Possibly for other very short lengths a special-purpose sorting method is applied and the remainder of these steps skipped.
+2. Otherwise **pick a value**, called a **pivot**, that occurs in the range (the precise manner of choosing depends on the partition routine, and can involve randomness).
+3. **Partition the range**: reorder its elements, while determining a point of division, so that all elements with values **less than the pivot come before the division**, while all elements with values **greater than the pivot come after it**; elements that are equal to the pivot can go either way. Since at least one instance of the pivot is present, most partition routines ensure that the value that ends up at the point of division is equal to the pivot, and is now in its final position (but termination of quicksort does not depend on this, as long as sub-ranges strictly smaller than the original are produced).
+4. **Recursively apply** the quicksort to the **sub-range up to the point of division** and to the **sub-range after it**, possibly excluding from both ranges the element equal to the pivot at the point of division. (If the partition produces a possibly larger sub-range near the boundary where all elements are known to be equal to the pivot, these can be excluded as well.)
+
+Time Complexity:
+- O(n²) in the worst case
+- O(n log n) in the average and best cases
+
+Space Complexity:
+- O(n) in the worst case
+- O(log n) in the average and best cases
 
 ### Merge sort
 
-:warning:
+Conceptually, a merge sort works as follows:
+- **Divide** the unsorted list into **n sublists**, each containing **one element** (a list of one element is considered sorted).
+- **Repeatedly merge sublists** to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
+
+Time Complexity:
+- O(n log n) in the average and worst cases
+
+Space Complexity:
+- O(n) in the worst case
 
 ## Searching
 
 ### Binary search
 
 - Recursive
-- Time complexity: O(log n)
+
+Time complexity:
+- O(log n) in the average and worst cases
+- O(1) in the best case
+
+Space complexity:
+- O(1) in the iterative method
+- O(log n) in the recursive method
 
 ```java
 // Returns index of key if found, else -1
