@@ -1,5 +1,31 @@
 # Important Data Structures
 
+## Collections
+
+**General purpose implementations**
+
+| Interface    | Hash Table | Resizable Array | Balanced Tree | Linked List | Hash Table + Linked List |
+|---|---|---|---|---|---|
+| Set          | HashSet    |                 | TreeSet       |             | LinkedHashSet |
+| List         |            | ArrayList       |               | LinkedList  | |
+| Queue, Deque |            | ArrayDeque      |               | LinkedList  | |
+| Map          | HashMap    |                 | TreeMap       |             | LinkedHashMap |
+
+Source: [Collections Framework Overview](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html)
+
+**Common data structures and their methods**
+
+| Interface | Insertion | Removal | Retrieval | Search | Length |
+|---|---|---|---|---|---|
+| Set  | .add(E e) | .remove(Object o) | - | .contains(Object o) | .size() <br/> .isEmpty() |
+| List | .add(E e) <br/> .add(int idx, E e) | .remove(E e) <br/> .remove(int idx) | .get(int idx) | .contains(Object o) | .size() <br/> .isEmpty() |
+| Queue | .add(E e) | .poll() | .poll() <br/> .peek() | .contains(Object o) | .size() <br/> .isEmpty() |
+| Deque | .addFirst(E e) <br/> .addLast(E e) | .pollFirst() <br/> .pollLast() | .peekFirst() <br/> .peekLast() <br/> .peek() | .contains(Object o) | .size() <br/> .isEmpty() |
+| Stack¹ | .push(E e) | .pop() | .peek() | .search(Object o) | .size() <br/> .isEmpty() |
+| Map | .put(K key, V value) | .remove(Object key) | .get(Object key) | .containsKey(Object k) <br/> .containsValue(Object v) | .size() <br/> .isEmpty() |
+
+¹ It's a class implementing the List interface and a sublcass of Vector.
+
 ## Arrays
 
 Primitive arrays are arrays of numbers, strings, or booleans.
@@ -25,8 +51,8 @@ arr2 = Arrays.copyOf(arr1, arr2.length);
 The package java.util have several classes for manipulating data structures.
 
 ```java
-import java.util.ArrayList;
-import java.util.List;
+import java.util.List;       // Interface
+import java.util.ArrayList;  // Class
 import java.util.Comparator;
 
 List<String> arrList = new ArrayList<String>();
@@ -63,6 +89,7 @@ FIFO Structure
 
 ```java
 import java.util.Queue;         // Interface
+import java.util.LinkedList;    // Class, implements Queue
 import java.util.PriorityQueue; // Class
 ```
 
@@ -93,6 +120,10 @@ import java.util.Map;       // Interface
 import java.util.HashMap;   // Class
 ```
 
+## Graphs
+
+## Trees
+
 ## Binary Trees
 
 ### Binary Search Trees
@@ -102,5 +133,3 @@ import java.util.HashMap;   // Class
 ### Min Heaps
 
 ### Max Heaps
-
-## Graphs
