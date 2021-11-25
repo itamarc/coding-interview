@@ -277,7 +277,6 @@ private boolean detectCycle(int[][] edges, int vertex, int target, Stack<Integer
 }
 ```
 
-
 #### Tree
 
 A tree is an undirected graph in which any two vertices are connected by exactly one path, or equivalently a connected acyclic undirected graph.
@@ -340,6 +339,12 @@ public static void reverse(LinkedList<T> linkedList) {
 ```
 
 ## Suffix tree
+
+In computer science, a suffix tree (also called PAT tree or, in an earlier
+form, position tree) is a compressed trie containing all the suffixes of the
+given text as their keys and positions in the text as their values. Suffix
+trees allow particularly fast implementations of many important string
+operations.
 
 :warning:
 

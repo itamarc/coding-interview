@@ -122,14 +122,79 @@ import java.util.HashMap;   // Class
 
 ## Graphs
 
+In mathematics, and more specifically in graph theory, a graph is a structure 
+amounting to a set of objects in which some pairs of the objects are in some 
+sense "related". The objects correspond to mathematical abstractions called 
+vertices (also called nodes or points) and each of the related pairs of 
+vertices is called an edge (also called link or line).
+
+- The edges may be directed or undirected.
+
+class Graph {
+    int V;               // Number of vertices
+    List<Integer> adj[]; // Adjacency list
+}
+
 ## Trees
+
+In graph theory, a tree is an undirected graph in which any two vertices are
+connected by exactly one path, or equivalently a connected acyclic undirected
+graph.
+
+In computer science, a tree is a widely used abstract data type that simulates
+a hierarchical tree structure, with a root value and subtrees of children with
+a parent node, represented as a set of linked nodes.
 
 ## Binary Trees
 
+A tree with only two children for each node.
+
+```java
+class Node {
+    int data; // The node can have any kind of data
+    Node left;
+    Node right;
+}
+```
+
 ### Binary Search Trees
+
+In computer science, a binary search tree (BST), also called an ordered or
+sorted binary tree, is a rooted binary tree data structure whose internal nodes
+each store a key greater than all the keys in the node’s left subtree and less
+than those in its right subtree.
 
 ## Heaps
 
+Heap is a data structure that satisfies the heap property:
+- The heap is a complete binary tree.
+- The parent node is always greater than or equal to its children (Max Heap) or smaller than or equal (Min Heap).
+- The root node is always the greatest element in the heap (Max Heap) or the smallest (Min Heap).
+
 ### Min Heaps
 
+- The parent node is always smaller than or equal to its children.
+- The root node is always the smallest element in the heap.
+
 ### Max Heaps
+
+- The parent node is always greater than or equal to its children.
+- The root node is always the greatest element in the heap.
+
+## Tries
+
+In computer science, a trie, also called digital tree or prefix tree, is a type
+of search tree, a tree data structure used for locating specific keys from
+within a set. These keys are most often strings, with links between nodes
+defined not by the entire key, but by individual characters. In order to access
+a key (to recover its value, change it, or remove it), the trie is traversed
+depth-first, following the links between nodes, which represent each character
+in the key.
+
+## Suffix tree
+
+In computer science, a suffix tree (also called PAT tree or, in an earlier
+form, position tree) is a compressed trie containing all the suffixes of the
+given text as their keys and positions in the text as their values. Suffix
+trees allow particularly fast implementations of many important string
+operations.
