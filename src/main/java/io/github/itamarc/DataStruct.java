@@ -193,12 +193,12 @@ public class DataStruct {
         linkedList.add(2, "Galapagos Islands");
         System.out.println(linkedList);
         
-        Stack<String> astack = new Stack<String>();
+        Stack<String> tmpStack = new Stack<String>();
         while (!linkedList.isEmpty()) {
-            astack.push(linkedList.removeFirst());
+            tmpStack.push(linkedList.removeFirst());
         }
-        while (!astack.isEmpty()) {
-            linkedList.add(astack.pop());
+        while (!tmpStack.isEmpty()) {
+            linkedList.add(tmpStack.pop());
         }
         System.out.println(linkedList);
     }

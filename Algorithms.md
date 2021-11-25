@@ -104,9 +104,23 @@ Space Complexity:
 
 ## Searching
 
+### Linear search
+
+Consists in iterating over the list to find the desired element.
+
+The list does not need to be sorted.
+
+Time Complexity:
+- O(n) in the average and worst cases
+- O(1) in the best case
+
+Space Complexity:
+- O(1)
+
 ### Binary search
 
-- Recursive
+- The list must be sorted.
+- Iterative or recursive
 
 Time complexity:
 - O(log n) in the average and worst cases
@@ -181,11 +195,40 @@ left, right, **root**
 
 ## Invert a binary tree
 
-:warning:
+Simple recursive method:
+
+```java
+public static void invertBinaryTree(BinaryTree tree) {
+    BinaryTree tmp = tree.left;
+    tree.left = tree.right;
+    tree.right = tmp;
+    
+    if (tree.left != null) {
+        invertBinaryTree(tree.left);
+    }
+    if (tree.right != null) {
+        invertBinaryTree(tree.right);
+    }
+}
+```
 
 ## Reverse a linked list
 
-:warning:
+We traverse the linked list putting the nodes in a stack.
+Then, we pop the nodes from the stack and put them back in the linked list.
+The nodes will be in the reverse order.
+
+```java
+public static void reverse(LinkedList<T> linkedList) {
+    Stack<T> tmpStack = new Stack<T>();
+    while (!linkedList.isEmpty()) {
+        tmpStack.push(linkedList.removeFirst());
+    }
+    while (!tmpStack.isEmpty()) {
+        linkedList.add(tmpStack.pop());
+    }
+}
+```
 
 ## Suffix tree
 
