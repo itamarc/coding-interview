@@ -159,35 +159,144 @@ public static int binarySearch(int array[], int leftIndex, int rightIndex, int t
 
 ## Recursion
 
-:warning:
+A common method of simplification is to divide a problem into subproblems of the same type.
+
+Such problems can generally be solved by iteration, but this needs to identify and index the smaller instances at programming time.
+Recursion solves such recursive problems by using functions that call themselves from within their own code.
+
+Example:
+
+```java
+int factorial(int n) {
+    if (n <= 0) {
+        return 1;
+    } else {
+        return factorial(n-1)*n;
+    }
+}
+```
 
 ## Graph traversal
 
+### Concepts
+
+In mathematics, and more specifically in graph theory, a graph is a structure 
+amounting to a set of objects in which some pairs of the objects are in some 
+sense "related". The objects correspond to mathematical abstractions called 
+vertices (also called nodes or points) and each of the related pairs of 
+vertices is called an edge (also called link or line).
+
+- The edges may be directed or undirected.
+
 ### Breadth-first
 
-:warning:
+```java
+class Node {
+    String name;
+    List<Node> children = new ArrayList<Node>();
+
+    // Return a list of the Nodes names in order of the breadth-first traversal
+    public List<String> breadthFirstSearch(List<String> array) {
+			Queue<Node> queue = new LinkedList<Node>();
+			queue.add(this);
+			while (!queue.isEmpty()) {
+				Node curr = queue.poll();
+				array.add(curr.name);
+				for (int i=0; i<curr.children.size(); i++) {
+					queue.add(curr.children.get(i));
+				}
+			}
+        return array;
+    }
+}
+```
 
 ### Depth-first
 
-:warning:
-
 - Usually recursive, but can be implemented iteratively with a stack.
 
-#### InOrder
+```java
+class Node {
+    String name;
+    List<Node> children = new ArrayList<Node>();
 
-left, **root**, right
-
-#### PreOrder
-
-**root**, left, right
-
-#### PostOrder
-
-left, right, **root**
+    // Return a list of the Nodes names in order of the depth-first traversal
+    public List<String> depthFirstSearch(List<String> array) {
+        array.add(name);
+        Iterator iter = children.iterator();
+        while (iter.hasNext()) {
+            Node child = (Node)iter.next();
+                child.depthFirstSearch(array);
+            }
+        return array;
+    }
+}
+```
 
 ### Cycle detection
 
-:warning:
+This may not be the optimal solution, bit it's mine and works.
+
+```java
+// Each element in the array corresponds to a node in the graph and
+// have a list of the nodes that are adjacent to it. Directional graph.
+int[][] edges = {
+    {1},
+    {2, 3},
+    {0, 4},
+    {},
+    {3}
+};
+
+public boolean cycleInGraph(int[][] edges) {
+    boolean hasCycle = false;
+    for (int i=0; i<edges.length; i++) {
+        Stack<Integer> history = new Stack<Integer>();
+        if (detectCycle(edges, i, i, history)) {
+            hasCycle = true;
+            break;
+        }
+    }
+    return hasCycle;
+}
+
+private boolean detectCycle(int[][] edges, int vertex, int target, Stack<Integer> history) {
+    boolean cycle = false;
+    for (int i=0; i<edges[vertex].length; i++) {
+        if (edges[vertex][i] == target) {
+            return true;
+        }
+        if (history.search(edges[vertex][i]) > 0) {
+            return true;
+        }
+        history.push(edges[vertex][i]);
+        cycle = cycle || detectCycle(edges, edges[vertex][i], target, history);
+        history.pop();
+    }
+    return cycle;
+}
+```
+
+
+#### Tree
+
+A tree is an undirected graph in which any two vertices are connected by exactly one path, or equivalently a connected acyclic undirected graph.
+
+##### Tree traversal
+
+For binary trees, the depth-first traversal can be made in three ways:
+
+###### InOrder
+
+left, **root**, right
+
+###### PreOrder
+
+**root**, left, right
+
+###### PostOrder
+
+left, right, **root**
 
 ## Sliding window technique
 
