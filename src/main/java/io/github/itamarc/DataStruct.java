@@ -2,6 +2,7 @@ package io.github.itamarc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -129,6 +130,15 @@ public class DataStruct {
         System.out.println("arrListInt="+arrListInt.toString());
         System.out.println("arrListInt2="+arrListInt2.toString());
 
+        ArrayList<Integer> arrListInt3 = new ArrayList<Integer>(3);
+        int ind = 0;
+        try {
+            arrListInt3.set(ind, 100);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Can't set a value in index "+ind+" on a list of size "+arrListInt3.size());
+        }
+        Collections.addAll(arrListInt3, 100, 0, 0);
+        System.out.println("arrListInt3="+arrListInt3.toString());
     }
 
     public void manipIntArray() {
