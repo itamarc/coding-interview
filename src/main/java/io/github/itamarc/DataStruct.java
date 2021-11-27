@@ -93,6 +93,9 @@ public class DataStruct {
         int[] arr = new int[5];
         System.arraycopy(nums, 0, arr, 0, arr.length);
         System.out.println("Copying nums to a array of size 5:\n"+Arrays.toString(arr));
+
+        int[] nums2 = Arrays.copyOf(nums, nums.length);
+        System.out.println("Copying nums to a new array (Arrays.copyOf):\n"+Arrays.toString(nums2));
         
         int[][] mulDimArr = new int[2][2];
         System.arraycopy(tuplesArr, 0, mulDimArr, 0, mulDimArr.length);
@@ -110,6 +113,8 @@ public class DataStruct {
         System.out.println("Making some manipulations on arrList:");
         System.out.println(arrList.size());
         System.out.println(arrList.toString());
+        List<String> newArrList = arrList.subList(0, arrList.size());
+        System.out.println("Copy of arrList made with 'subList':\n"+newArrList.toString());
 
         ArrayList<Integer> arrListInt = new ArrayList<Integer>();
         arrListInt.add(3);
