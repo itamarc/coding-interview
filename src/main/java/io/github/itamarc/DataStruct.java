@@ -288,16 +288,27 @@ public class DataStruct {
         map.put(13, 23);
         map.put(14, 24);
         map.remove(14);
+        map.put(13, 123);
         System.out.println("Map: "+map.toString());
         System.out.println("Map contains key 12? "+map.containsKey(12));
         System.out.println("Map contains key 22? "+map.containsKey(22));
         System.out.println("Map contains value 22? "+map.containsValue(22));
         System.out.println("Map contains value 12? "+map.containsValue(12));
 
+        System.out.println("Element with key 13: "+map.get(13));
+
         System.out.print("Keys: [");
         boolean first = true;
         for (int key : map.keySet()) {
             System.out.print((first ? "" : ", ")+key);
+            first = false;
+        }
+        System.out.println("]");
+
+        System.out.print("Values: [");
+        first = true;
+        for (int value : map.values()) {
+            System.out.print((first ? "" : ", ")+value);
             first = false;
         }
         System.out.println("]");
