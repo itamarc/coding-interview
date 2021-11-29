@@ -197,15 +197,19 @@ class Node {
 
     // Return a list of the Nodes names in order of the breadth-first traversal
     public List<String> breadthFirstSearch(List<String> array) {
-			Queue<Node> queue = new LinkedList<Node>();
-			queue.add(this);
-			while (!queue.isEmpty()) {
-				Node curr = queue.poll();
-				array.add(curr.name);
-				for (int i=0; i<curr.children.size(); i++) {
-					queue.add(curr.children.get(i));
-				}
-			}
+            Queue<Node> queue = new LinkedList<Node>();
+            queue.add(this);
+            while (!queue.isEmpty()) {
+                Node curr = queue.poll();
+
+                // This can be a different action, like returning
+                // true if the target is found:
+                array.add(curr.name);
+
+                for (int i=0; i<curr.children.size(); i++) {
+                    queue.add(curr.children.get(i));
+                }
+            }
         return array;
     }
 }
@@ -226,8 +230,8 @@ class Node {
         Iterator iter = children.iterator();
         while (iter.hasNext()) {
             Node child = (Node)iter.next();
-                child.depthFirstSearch(array);
-            }
+            child.depthFirstSearch(array);
+        }
         return array;
     }
 }
@@ -368,7 +372,7 @@ To insert a node:
 - If the parent is smaller, swap the nodes.
 - Continue until the node is in the correct position.
 
-To remove the root node:
+To remove **the root node**:
 - Swap the root node with the last node.
 - Remove the last node.
 - Compare the root node with its smaller child.

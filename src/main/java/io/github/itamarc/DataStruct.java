@@ -255,6 +255,8 @@ public class DataStruct {
         
         System.out.println("Search 2: "+iStack.search(2));
         System.out.println("Search 5: "+iStack.search(5));
+
+        System.out.println("Stack: "+iStack);
     }
 
     // SETS
@@ -273,6 +275,7 @@ public class DataStruct {
         set.add("Ccc");
         System.out.println(set);
         System.out.println((set.contains("Bbb") ? "Set contains 'Bbb'" : "Set doesn't contain 'Bbb'"));
+        System.out.println("Removing 'Bbb'...");
         set.remove("Bbb");
         System.out.println(set);
         System.out.println((set.contains("Bbb") ? "Set contains 'Bbb'" : "Set doesn't contain 'Bbb'"));
