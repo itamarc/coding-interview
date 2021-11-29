@@ -31,6 +31,7 @@ public class DataStruct {
         ds.manipQueue();
         ds.manipStacks();
         ds.manipMaps();
+        ds.manipBinaryTrees();
     }
 
     private void maxAndMinCombination() {
@@ -318,6 +319,12 @@ public class DataStruct {
     }
 
     // BINARY TREES
+    public void manipBinaryTrees() {
+        System.out.println("Manipulating Binary Trees:");
+        BinaryTree<Integer> root = new BinaryTree<Integer>(1);
+        root.insertLeft(2);
+        root.insertRight(3);
+    }
 
     // HEAPS
 
