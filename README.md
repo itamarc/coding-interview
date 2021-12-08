@@ -19,7 +19,7 @@ Preparation for coding interviews.
 - [x] Invert a binary tree
 - [x] Reverse a linked list
 - [x] Sliding window technique
-- [+] Heaps
+- [x] Heaps
 - [ ] Suffix tree
 - [ ] ~~Dynamic programming~~
 
