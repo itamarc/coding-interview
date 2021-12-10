@@ -6,6 +6,7 @@ public class Strings {
         manipStrings();
         manipStrBuf();
         manipChars();
+        substrings();
     }
 
     public static void manipStrings() {
@@ -36,5 +37,15 @@ public class Strings {
         char[] arr = str2.toCharArray();
         arr[2] = 'x';
         System.out.println("String from char array: "+String.valueOf(arr));
+    }
+
+    private static void substrings() {
+        String str = "abcde5fghij";
+        int b = str.indexOf('b');
+        int e = str.indexOf('e');
+        System.out.println("String: "+str);
+        System.out.println("Substring from "+b+" to "+e+": "+str.substring(b, e)); // beginIndex is INCLUSVE, endIndex is EXCLUSIVE
+        System.out.println("Substring from "+e+" to end: "+str.substring(e));
+        System.out.println("Substring from start to "+e+": "+str.substring(0, e));
     }
 }
