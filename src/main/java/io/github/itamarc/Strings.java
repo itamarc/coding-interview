@@ -7,6 +7,7 @@ public class Strings {
         manipStrBuf();
         manipChars();
         substrings();
+        formatter();
     }
 
     public static void manipStrings() {
@@ -47,5 +48,15 @@ public class Strings {
         System.out.println("Substring from "+b+" to "+e+": "+str.substring(b, e)); // beginIndex is INCLUSVE, endIndex is EXCLUSIVE
         System.out.println("Substring from "+e+" to end: "+str.substring(e));
         System.out.println("Substring from start to "+e+": "+str.substring(0, e));
+    }
+
+    private static void formatter() {
+        var myString = """
+            This is a string
+            with multiple lines
+            and a newline at the end
+            %s
+        """;
+        System.out.println(myString.formatted("blah"));
     }
 }
