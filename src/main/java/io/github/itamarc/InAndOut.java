@@ -1,6 +1,5 @@
 package io.github.itamarc;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class InAndOut {
