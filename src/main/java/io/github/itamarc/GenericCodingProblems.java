@@ -1,13 +1,16 @@
 package io.github.itamarc;
 
 import java.util.Arrays;
+import java.util.Stack;
 
+@SuppressWarnings("unused")
 public class GenericCodingProblems {
     public static void main(String[] args) {
         // testTask();
         task1(); // 77% 7/9
         task2(); // 100%
         task3(); // 40% 4/10 + 0/6
+        task4();
     }
 
     private static void task3() {
@@ -145,5 +148,38 @@ public class GenericCodingProblems {
             }
         }
         return str.substring(0, lastCharInd);
+    }
+
+    private static void task4() {
+        String test1 = "([])(){}(())()()";
+        System.out.println(test1 + ": " + bracketsPairs(test1));
+        String test2 = "([])(){}())()()";
+        System.out.println(test2 + ": " + bracketsPairs(test2));
+        String test3 = "([])(){}(()()()";
+        System.out.println(test3 + ": " + bracketsPairs(test3));
+        String test4 = "([a])(b)c{d}e(fghij())()()x";
+        System.out.println(test4 + ": " + bracketsPairs(test4));
+    }
+
+    public static boolean bracketsPairs(String in) {
+        final String OPEN = "([{";
+        final String CLOSE = ")]}";
+        Stack<Character> stack = new Stack<>();
+        boolean result = true;
+        for (int i = 0; i < in.length(); i++) {
+            char c = in.charAt(i);
+            if (OPEN.indexOf(c) >= 0) {
+                stack.push(CLOSE.charAt(OPEN.indexOf(c)));
+            } else if (CLOSE.indexOf(c) >= 0) {
+                if (stack.isEmpty() || c != stack.pop()) {
+                    result = false;
+                    break;
+                }
+            }
+        }
+        if (!stack.isEmpty()) {
+            result = false;
+        }
+        return result;
     }
 }
