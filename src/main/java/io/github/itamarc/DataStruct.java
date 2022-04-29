@@ -58,6 +58,8 @@ public class DataStruct {
     String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     int[] nums = {24, 2, 27, 49, 11, 6, 17, 18, 5, 21, 42};
     int[] sortedNums = {2, 5, 6, 11, 17, 18, 21, 24, 27, 42, 49};
+    float[] floats = {24.1F, 2.2F, 27.3F, 49.4F, 11.5F, 6.6F, 17.7F, 18.8F, 5.9F, 21.11F, 42.12F};
+    float[] sortedFloats = {2.2F, 5.9F, 6.6F, 11.5F, 17.7F, 18.8F, 21.11F, 24.1F, 27.3F, 42.12F, 49.4F};
     int[][] tuplesArr = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
     int[][] multiDimArr = {{2, 5, 6, 11, 17, 18}, {21, 24, 27, 42, 49}};
     // The ArrayList class is a resizable array, which can be found in the java.util package.
